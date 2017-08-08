@@ -11,7 +11,10 @@ set showcmd
 set showmode
 
 " Show the line relative number
-set relativenumber
+" set relativenumber
+
+" Set numbers
+set number
 
 " Auto indent tabs
 set autoindent
@@ -24,4 +27,6 @@ set expandtab
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
-
+" Highlighting the searched words
+" set hlsearch
+":echo ">^.^<"
