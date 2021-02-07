@@ -6,3 +6,5 @@ apt-get install tldr
 apt-get install tig
 apt-get install nodejs
 apt-get install tmux
+apt-get install mosquito
+
