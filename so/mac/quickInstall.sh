@@ -4,3 +4,4 @@ brew install fzf
 brew install vim
 brew install tldr
 brew install tig
+brew install jq
