@@ -68,6 +68,9 @@ Plugin 'VundleVim/Vundle.vim'
 "" Syntastic plugins
 Plugin 'vim-syntastic/syntastic'
 
+"" bottom line
+Plugin 'itchyny/lightline.vim'
+
 "" VimWiki
 Plugin 'vimwiki/vimwiki'
 
@@ -98,26 +101,6 @@ let g:nv_search_paths = ['~/wiki_personal/zettelkasten' ]
 
 " Syntastic recomended configurations
 set laststatus=2
-set statusline=
-set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
-set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
-set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
-set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline+=%#CursorIM#
-set statusline+=%R "readonly flag
-set statusline+=%M "modified [+] flag
-set statusline+=%#Cursor#
-set statusline+=%#CursorLine#
-set statusline+=\ %t " short file name
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%=
-set statusline+=%#CursorLine#
-set statusline+=\ %Y\ 
-set statusline+=%#CursorIM#
-set statusline+=\ %3l:%-2c\ 
-set statusline+=%#Cursor#
-set statusline+=\ %3p%%\ 
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -125,5 +108,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+
+let g:lightline = { 'colorscheme': 'wombat' }
 
 colorscheme morning
