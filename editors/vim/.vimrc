@@ -71,6 +71,11 @@ Plugin 'vim-syntastic/syntastic'
 "" VimWiki
 Plugin 'vimwiki/vimwiki'
 
+"" Zettelkasten plugins
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'michal-h21/vim-zettel'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -88,6 +93,8 @@ let wiki_2.syntax = 'markdown'
 let wiki_2.ext = '.md'
 
 let g:vimwiki_list = [wiki_1, wiki_2]
+
+let g:nv_search_paths = ['~/wiki_personal/zettelkasten' ]
 
 " Syntastic recomended configurations
 set laststatus=2
