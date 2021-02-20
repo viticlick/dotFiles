@@ -112,3 +112,7 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 let g:lightline = { 'colorscheme': 'wombat' }
 
 colorscheme morning
+
+function! ZettelId()
+	put =strftime('%Y%m%d%H%M%S')
+endfunction
