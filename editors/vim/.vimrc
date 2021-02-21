@@ -46,6 +46,9 @@ nnoremap <space> za
 " PEP 8 identation
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent smarttab fileformat=unix
 
+" 80 columns for markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 " Other languages
 au BufNewFile,BufRead *.html,*.css,*.js,*.yml set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 
