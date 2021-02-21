@@ -74,6 +74,9 @@ Plugin 'vim-syntastic/syntastic'
 "" bottom line
 Plugin 'itchyny/lightline.vim'
 
+" Auto commit
+Plugin 'viticlick/vim-auto-commit'
+
 "" VimWiki
 Plugin 'vimwiki/vimwiki'
 
@@ -85,6 +88,8 @@ Plugin 'michal-h21/vim-zettel'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+autocmd BufWritePost */wiki_personal/* call AutoCommit()
 
 "" vimwiki
 let wiki_1 = {}
