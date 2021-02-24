@@ -6,4 +6,5 @@ alias ...="cd ../.."
 alias ll="ls -l"
 alias la="ls -a"
 alias cdp="cd $HOME/projects"
+alias dotfiles="cd ~/.dotfiles"
 
