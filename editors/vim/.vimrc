@@ -56,7 +56,7 @@ au BufNewFile,BufRead *.html,*.css,*.js,*.yml set tabstop=2 softtabstop=2 expand
 autocmd BufWritePre *js %s/\s\+$//e
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
+"filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -83,27 +83,13 @@ Plugin 'vimwiki/vimwiki'
 "" Zettelkasten plugins
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'michal-h21/vim-zettel'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype plugin on
 filetype plugin indent on    " required
 
-autocmd BufWritePost */wiki_personal/* call AutoCommit()
-
-"" vimwiki
-let wiki_1 = {}
-let wiki_1.path = '~/wiki_personal'
-let wiki_1.path_html = '~/wiki_personal_html'
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
-let wiki_2 = {}
-let wiki_2.path = '~/wiki_work'
-let wiki_2.path_html = '~/wiki_work_html'
-let wiki_2.syntax = 'markdown'
-let wiki_2.ext = '.md'
-
-let g:vimwiki_list = [wiki_1, wiki_2]
+autocmd BufWritePost */wiki_work/* call AutoCommit()
 
 let g:nv_search_paths = ['~/wiki_personal/zettelkasten' ]
 
@@ -119,7 +105,7 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
-colorscheme morning
+colorscheme default
 
 function! ZettelId()
 	put =strftime('%Y%m%d%H%M%S')
