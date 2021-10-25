@@ -7,3 +7,4 @@ brew install tig
 brew install jq
 brew install the_silver_searcher
 brew install ripgrep
+brew install tmux
