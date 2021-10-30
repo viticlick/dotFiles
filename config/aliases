@@ -1,0 +1,3 @@
+#!/bin/sh
+alias ta='tig --all'
+alias tmux="tmux -f $HOME/.dotfiles/config/tmux.conf"
