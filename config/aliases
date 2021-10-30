@@ -1,3 +1,5 @@
 #!/bin/sh
 alias ta='tig --all'
 alias tmux="tmux -f $HOME/.dotfiles/config/tmux.conf"
+alias ec="find ~/.dotfiles/config -type f | fzf | xargs $EDITOR"
+alias dotfiles='cd ~/.dotfiles'
