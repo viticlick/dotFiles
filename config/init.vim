@@ -46,6 +46,9 @@ Plug 'preservim/nerdtree' 	" Shows filesystem tree
 
 Plug 'vimwiki/vimwiki' 		" VimWiki enables an easy tool to create a wiki
 
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
 Plug 'itchyny/lightline.vim' 	" bottom line plugin
 
 Plug 'vim-syntastic/syntastic'	" Syntastic plugin
