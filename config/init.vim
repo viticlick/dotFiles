@@ -55,6 +55,10 @@ Plug 'vim-syntastic/syntastic'	" Syntastic plugin
 
 call plug#end()
 
+nnoremap <silent> <C-n> :FZF<CR>
+nnoremap <silent> <C-f> :Rg<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+
 " Vim Wiki
 let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'ext': '.md', 'syntax': 'markdown' }]
 au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
