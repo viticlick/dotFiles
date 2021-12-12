@@ -38,6 +38,8 @@ nnoremap <space> za
 filetype plugin on	" Mandatory for VimWiki
 set nocompatible	" Mandatory for VimWiki
 
+set clipboard=unnamed
+
 
 " PLUGINS
 call plug#begin('~/.local/share/nvim/plugged')
