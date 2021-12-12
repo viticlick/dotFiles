@@ -77,6 +77,12 @@ Plug 'itchyny/lightline.vim' 	" bottom line plugin
 
 Plug 'vim-syntastic/syntastic'	" Syntastic plugin
 
+Plug 'tpope/vim-rails' " RoR plugin
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Use release branch (recommend)
+
+Plug 'tpope/vim-endwise' " Close ruby blocks with end token
+
 call plug#end()
 
 nnoremap <silent> <C-n> :FZF<CR>
