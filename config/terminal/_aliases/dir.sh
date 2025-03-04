@@ -1,0 +1,5 @@
+alias dotfiles="cd ~/.dotfiles"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ll="ls -l"
+alias la="ls -a"
