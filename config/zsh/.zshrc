@@ -73,10 +73,12 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	autojump
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	web-search
+	# heroku
+	# aws
 )
 
 
@@ -85,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 DOTFILES="$HOME/.dotfiles/config"
 
 # Alisases
-source $DOTFILES/aliases
+source $DOTFILES/terminal/init.sh
 
 # User configuration
 
@@ -96,7 +98,7 @@ source $DOTFILES/aliases
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+   export EDITOR='cursor'
 else
    command -v nvim &> /dev/null && export EDITOR='nvim' || export EDITOR='vi'
 fi
@@ -113,6 +115,37 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+#fi
+
+eval "$(ssh-agent -s)" > /dev/null
+ssh-add -K $HOME/.ssh/github 2> /dev/null
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init - zsh)"
+eval "$(rbenv init - zsh)"
+
+export PATH="/opt/homebrew/opt/git/bin:$PATH"
+
+# Flags used to install puppeteers with npm
+#export PUPPETEER_EXECUTABLE_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+#export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
+# Flags to use pg gem for rails
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"
+
+# completitions
+# fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+HOMEBREW_AUTO_UPDATE_SECS=4800

@@ -113,7 +113,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Connect to default tmux session or creates a new one
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+#fi
 
